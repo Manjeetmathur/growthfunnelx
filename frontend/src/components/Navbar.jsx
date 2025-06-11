@@ -30,10 +30,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Case Studies', path: '/case-studies' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'About', path: '/about' },
   ];
 
   return (
@@ -80,7 +79,7 @@ const Navbar = () => {
               transition={{ duration: 0.3, delay: 0.5 }}
             >
               <Button asChild>
-                <Link to="/contact">Get a Quote</Link>
+                <Link to="/contact">Contact us</Link>
               </Button>
             </motion.div>
           </nav>
@@ -122,7 +121,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Button asChild className="w-full mt-2">
-                <Link to="/contact">Get a Quote</Link>
+                <Link to="/contact">Contact us</Link>
               </Button>
             </nav>
           </div>

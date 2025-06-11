@@ -2,10 +2,11 @@ import nodemailer from "nodemailer";
 import { Contact } from "../models/contactModel.js";
 
 export const sendMessage = async (req, res) => {
-       const { name, email, message, phone, company, service } = req.body;
+       const { name, email, message, phone, company, budget } = req.body;
        try {
               // Save to MongoDB
-              const contact = await Contact.create({ name, email, message, phone, company: company, service });
+              console.log(phone,company)
+              const contact = await Contact.create({ name, email, message, phone, company, budget });
               await contact.save();
 
               // Send email to the user
@@ -72,3 +73,40 @@ export const replyToMessage = async (req, res) => {
               res.status(500).json({ success: false, message: 'Failed to send email' });
        }
 };
+export const pageReload = async(req,res) => {
+       console.log("ji")
+        res.send("done")
+}
+
+// export const checkMessage = async (req, res) => {
+//        const { name, email, message, phone, company, budget } = req.body;
+//        try {
+//               // Save to MongoDB
+//               console.log(phone,company)
+//               const contact = await Contact.create({ name, email, message, phone, company, budget });
+//               await contact.save();
+
+//               // Send email to the user
+//               const transporter = nodemailer.createTransport({
+//                      service: "gmail",
+//                      auth: {
+//                             user: process.env.SMTP_USER,
+//                             pass: process.env.SMTP_PASS,
+//                      },
+//               });
+
+//               const mailOptions = {
+//                      from: process.env.SMTP_USER,
+//                      to: email,
+//                      subject: "Thanks for contacting us!",
+//                      text: `Hi ${name},\n\nWe received your message:\n"${message}"\n\nWe'll get back to you shortly.\n\nThanks,\nTeam`,
+//               };
+
+//               await transporter.sendMail(mailOptions);
+
+//               res.status(200).json({ message: "Message sent and saved successfully" });
+//        } catch (error) {
+//               console.error("Error in sendMessage:", error.message);
+//               res.status(500).json({ error: "Failed to send message" });
+//        }
+// };

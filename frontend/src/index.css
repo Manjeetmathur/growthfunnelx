@@ -78,14 +78,14 @@
   @apply relative overflow-hidden rounded-xl p-6 border border-border transition-all duration-300 hover:shadow-lg;
 }
 
-.service-card::before {
+/* .service-card::before {
   content: '';
   @apply absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-500/10 opacity-0 transition-opacity duration-300;
 }
 
 .service-card:hover::before {
   @apply opacity-100;
-}
+} */
 
 .testimonial-card {
   @apply relative overflow-hidden rounded-xl p-6 border border-border transition-all duration-300;

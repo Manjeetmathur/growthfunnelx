@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart2, Search, Share2, TrendingUp } from 'lucide-react';
+import { start } from '../components/Backendurl/url';
 
 const CaseStudiesPage = () => {
+const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+    useEffect( () => {
+      start();
+    }, [])
+  
   return (
     <div className="pt-24">
       {/* Hero Section */}

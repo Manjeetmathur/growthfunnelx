@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Award, Users, Target, Clock, CheckCircle } from 'lucide-react';
+import { start } from '../components/Backendurl/url';
 
 const AboutPage = () => {
+
+    useEffect( () => {
+      start();
+    }, [])
+  const location = useLocation();
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [location.pathname]);
   return (
     <div className="pt-24">
       {/* Hero Section */}
@@ -128,7 +137,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Ankit Kumar",
+                name: "Ankit Kumar (lead generation expert)",
                 position: "Founder & CEO",
                 bio: "With over 4 years of experience in digital marketing, Vikram leads our strategic vision.",
                 image: "A professional Indian man in his 40s wearing a business casual outfit with glasses"
@@ -163,7 +172,7 @@ const AboutPage = () => {
                 <img  
                   className="w-full h-64 object-cover" 
                   alt={`${member.name}, ${member.position} at Growth FunnelX`}
-                 src="https://images.unsplash.com/photo-1644424235476-295f24d503d9" />
+                 src="https://tse1.mm.bing.net/th?id=OIP.OSn44nDCuend-3kz0y7idwHaHa&pid=Api&P=0&h=180" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                   <p className="text-purple-600 font-medium mb-3">{member.position}</p>

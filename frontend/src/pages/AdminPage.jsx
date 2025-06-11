@@ -3,8 +3,17 @@ import axios from 'axios';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
 import ReplyModal from '../components/ReplyModal';
-import { url } from '../components/Backendurl/url';
+import { start, url } from '../components/Backendurl/url';
+import { useLocation } from 'react-router-dom';
 const AdminMessages = () => {
+       
+         useEffect( () => {
+           start();
+         }, [])
+       const location = useLocation();
+         useEffect(() => {
+           window.scrollTo({ top: 0, behavior: 'smooth' });
+         }, [location.pathname]);
        const { toast } = useToast();
        const [messages, setMessages] = useState([]);
        const [loading, setLoading] = useState(true);
