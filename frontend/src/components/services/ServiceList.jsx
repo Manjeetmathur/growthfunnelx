@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import p1 from '../../../public/p1.jpg'
 import { 
   Search, 
   BarChart2, 
@@ -12,20 +13,7 @@ import {
 
 const servicesData = [
   {
-    icon: <Search className="h-8 w-8 text-purple-600" />,
-    title: "Search Engine Optimization",
-    description: "Our comprehensive SEO strategies help your business gain visibility in search engine results, driving organic traffic and improving your online presence.",
-    features: [
-      "Technical SEO audits and optimization",
-      "Keyword research and content strategy",
-      "On-page and off-page optimization",
-      "Local SEO for Bangalore businesses"
-    ],
-    imgSrc: "https://images.unsplash.com/photo-1675023112817-52b789fd2ef0",
-    imgAlt: "SEO analytics dashboard showing keyword rankings and traffic growth"
-  },
-  {
-    icon: <BarChart2 className="h-8 w-8 text-purple-600" />,
+     icon: <BarChart2 className="h-8 w-8 text-purple-600" />,
     title: "Pay-Per-Click Advertising",
     description: "Our PPC experts create and manage high-performing campaigns across multiple platforms to drive targeted traffic and conversions.",
     features: [
@@ -34,6 +22,21 @@ const servicesData = [
       "Remarketing and audience targeting",
       "Conversion tracking and optimization"
     ],
+     status: true,
+    imgSrc: "https://images.unsplash.com/photo-1675023112817-52b789fd2ef0",
+    imgAlt: "SEO analytics dashboard showing keyword rankings and traffic growth"
+  },
+  {
+   icon: <Search className="h-8 w-8 text-purple-600" />,
+    title: "Search Engine Optimization",
+    description: "Our comprehensive SEO strategies help your business gain visibility in search engine results, driving organic traffic and improving your online presence.",
+    features: [
+      "Technical SEO audits and optimization",
+      "Keyword research and content strategy",
+      "On-page and off-page optimization",
+      "Local SEO for Bangalore businesses"
+    ],
+     status: false,
     imgSrc: "https://images.unsplash.com/photo-1675023112817-52b789fd2ef0",
     imgAlt: "PPC campaign management dashboard showing ad performance metrics",
     reverseLayout: true,
@@ -48,7 +51,8 @@ const servicesData = [
       "Paid social advertising",
       "Community management and engagement"
     ],
-    imgSrc: "https://images.unsplash.com/photo-1676276376385-3801c9f0a68e",
+     status: false,
+    imgSrc: p1,
     imgAlt: "Social media marketing content calendar and analytics dashboard"
   },
   {
@@ -61,6 +65,7 @@ const servicesData = [
       "Automated email sequences and drip campaigns",
       "A/B testing and performance optimization"
     ],
+     status: false,
     imgSrc: "https://images.unsplash.com/photo-1533750446969-255bbf191920",
     imgAlt: "Email marketing campaign design and analytics dashboard",
     reverseLayout: true,
@@ -75,6 +80,7 @@ const servicesData = [
       "Ebooks, whitepapers, and case studies",
       "Infographics and visual content"
     ],
+     status: false,
     imgSrc: "https://images.unsplash.com/photo-1676276374803-36e48196d5ac",
     imgAlt: "Content marketing strategy planning session with content calendar"
   },
@@ -88,13 +94,14 @@ const servicesData = [
       "Data analysis and insights",
       "ROI tracking and optimization recommendations"
     ],
+     status: false,
     imgSrc: "https://images.unsplash.com/photo-1625296276703-3fbc924f07b5",
     imgAlt: "Marketing analytics dashboard with performance metrics and ROI data",
     reverseLayout: true,
   }
 ];
 
-const ServiceItem = ({ icon, title, description, features, imgSrc, imgAlt, reverseLayout }) => {
+const ServiceItem = ({ icon, title, description, features, imgSrc, imgAlt, reverseLayout,status }) => {
   return (
     <motion.div 
       className={`flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8`}
@@ -117,6 +124,8 @@ const ServiceItem = ({ icon, title, description, features, imgSrc, imgAlt, rever
             </li>
           ))}
         </ul>
+         <div className="mb-4 pr-4 font-semibold text-lg">{status ? <p className='text-green-500'>View...</p> : <p className='text-blue-500'>Coming Soon...</p>}</div>
+
       </div>
       <div className="md:w-1/2">
         <img  

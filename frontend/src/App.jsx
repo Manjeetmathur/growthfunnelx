@@ -11,6 +11,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AdminMessages from './pages/AdminPage';
 import ThankYou from './pages/ThankYou';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/growthfunnelx" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/thankyou" element={<ThankYou />} />

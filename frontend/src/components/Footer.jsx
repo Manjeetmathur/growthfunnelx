@@ -1,19 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  MapPin 
+
+import { FaLinkedinIn } from "react-icons/fa6";
+
+import { FaFacebookF } from "react-icons/fa6";
+import { TiSocialTwitter } from "react-icons/ti";
+import { SiYoutube } from "react-icons/si";
+import { RiInstagramFill } from "react-icons/ri";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin
 } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="footer-gradient text-white">
       <div className="container mx-auto px-4 py-12">
@@ -29,19 +36,13 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               Your trusted performance marketing partner in Bangalore, helping businesses achieve measurable growth through data-driven strategies.
             </p>
-            <div className="flex space-x-4 mt-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-400 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-blue-400 transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-400 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-400 transition-colors">
-                <Linkedin size={20} />
-              </a>
+            <div className="flex justify-center sm:justify-start flex-row gap-4 my-5">
+              <Link to="https://www.linkedin.com/company/107170905/admin/dashboard/" target='_blank' className=' text-xl rounded-xl hover:text-white'><FaLinkedinIn /></Link>
+              <Link to="https://www.facebook.com/profile.php?id=61577216993855" target='_blank' className=' text-xl rounded-xl hover:text-white'><FaFacebookF /></Link>
+              <Link to="https://x.com/growthfunnelx" target='_blank' className=' text-xl rounded-xl hover:text-white'><TiSocialTwitter /></Link>
+              <Link to="https://www.instagram.com/growthfunnelx/" target='_blank' className=' text-xl rounded-xl hover:text-white'><RiInstagramFill /></Link>
+              <Link to="https://www.youtube.com/@growthfunnelx" target='_blank' className=' text-xl rounded-xl hover:text-white'><SiYoutube /></Link>
+
             </div>
           </motion.div>
 
@@ -58,7 +59,7 @@ const Footer = () => {
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link>
@@ -82,11 +83,12 @@ const Footer = () => {
             <span className="text-lg font-semibold mb-4 block">Our Services</span>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Search Engine Optimization</Link>
-              </li>
-              <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Pay-Per-Click Advertising</Link>
               </li>
+              <li>
+                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Search Engine Optimization</Link>
+              </li>
+              
               <li>
                 <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Social Media Marketing</Link>
               </li>

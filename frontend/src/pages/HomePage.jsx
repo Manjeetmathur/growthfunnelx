@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaLinkedinIn } from "react-icons/fa6";
 import { start, url } from '../components/Backendurl/url';
 import axios from 'axios'
 import {
@@ -14,10 +13,6 @@ import {
   Users
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { FaFacebookF } from "react-icons/fa6";
-import { TiSocialTwitter } from "react-icons/ti";
-import { SiYoutube } from "react-icons/si";
-import { RiInstagramFill } from "react-icons/ri";
 const HomePage = () => {
   const location = useLocation();
   useEffect(() => {
@@ -46,21 +41,15 @@ const HomePage = () => {
               <p className="text-lg md:text-xl text-gray-700 mb-8">
                 Bangalore's premier performance marketing agency helping businesses achieve measurable growth through data-driven strategies.
               </p>
-              <div className="flex justify-center sm:justify-start flex-row gap-4 my-5">
-                <Link to="https://www.linkedin.com/company/107170905/admin/dashboard/" target='_blank' className='p-2 sm:p-3 text-xl border-blue-600 border-[3px]  rounded-xl bg-gradient-to-l hover:bg-blue-700 hover:text-white'><FaLinkedinIn /></Link>
-                <Link to="https://www.facebook.com/profile.php?id=61577216993855" target='_blank' className='p-2 sm:p-3 text-xl border-blue-600 border-[3px]  rounded-xl bg-gradient-to-l hover:bg-blue-700 hover:text-white'><FaFacebookF /></Link>
-                <Link to="https://x.com/growthfunnelx" target='_blank' className='p-2 sm:p-3 text-xl border-blue-600 border-[3px]  rounded-xl bg-gradient-to-l hover:bg-blue-700 hover:text-white'><TiSocialTwitter /></Link>
-                <Link to="https://www.instagram.com/growthfunnelx/" target='_blank' className='p-2 sm:p-3 text-xl border-blue-600 border-[3px]  rounded-xl bg-gradient-to-l hover:bg-blue-700 hover:text-white'><RiInstagramFill /></Link>
-                <Link to="https://www.youtube.com/@growthfunnelx" target='_blank' className='p-2 sm:p-3 text-xl border-blue-600 border-[3px]  rounded-xl bg-gradient-to-l hover:bg-blue-700 hover:text-white'><SiYoutube /></Link>
-
-              </div>
+          
               <div className="flex flex-col sm:flex-row gap-4 ">
                 <Button asChild size="lg" className="text-base">
-                  <Link to="/contact">Get Started</Link>
+                  <Link to="/growthfunnelx">Get Started</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-base">
                   <Link to="/case-studies">View Our Work</Link>
                 </Button>
+
               </div>
             </motion.div>
             <motion.div
@@ -159,7 +148,7 @@ const HomePage = () => {
                 >
                   <div className="flex justify-between items-center">
                     <div className="mb-4">{service.icon}</div>
-                    <div className="mb-4 pr-4 font-semibold text-lg">{(service.status) ? <p className='text-green-500'>View...</p> : <p className='text-red-500'>Coming Soon...</p>}</div>
+                    <div className="mb-4 pr-4 font-semibold text-lg">{(service.status) ? <p className='text-green-500'>View...</p> : <p className='text-blue-500'>Coming Soon...</p>}</div>
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
