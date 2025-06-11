@@ -21,7 +21,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/growthfunnelx" element={<LandingPage />} />
+            <Route path="/lead-generation" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/thankyou" element={<ThankYou />} />

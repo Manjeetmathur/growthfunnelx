@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Award, Users, Target, Clock, CheckCircle } from 'lucide-react';
 import { start } from '../components/Backendurl/url';
+import p1 from '../../public/p2.jpg'
 
 const AboutPage = () => {
 
@@ -140,7 +141,8 @@ const AboutPage = () => {
                 name: "Ankit Kumar (lead generation expert)",
                 position: "Founder & CEO",
                 bio: "With over 4 years of experience in digital marketing, Vikram leads our strategic vision.",
-                image: "A professional Indian man in his 40s wearing a business casual outfit with glasses"
+                image: "A professional Indian man in his 40s wearing a business casual outfit with glasses",
+                url:p1,
               },
               {
                 name: "Neha Sharma",
@@ -172,7 +174,7 @@ const AboutPage = () => {
                 <img  
                   className="w-full h-64 object-cover" 
                   alt={`${member.name}, ${member.position} at Growth FunnelX`}
-                 src="https://tse1.mm.bing.net/th?id=OIP.OSn44nDCuend-3kz0y7idwHaHa&pid=Api&P=0&h=180" />
+                 src={member?.url || "https://tse1.mm.bing.net/th?id=OIP.OSn44nDCuend-3kz0y7idwHaHa&pid=Api&P=0&h=180" } />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                   <p className="text-purple-600 font-medium mb-3">{member.position}</p>

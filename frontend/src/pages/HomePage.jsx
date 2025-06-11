@@ -41,10 +41,10 @@ const HomePage = () => {
               <p className="text-lg md:text-xl text-gray-700 mb-8">
                 Bangalore's premier performance marketing agency helping businesses achieve measurable growth through data-driven strategies.
               </p>
-          
+
               <div className="flex flex-col sm:flex-row gap-4 ">
                 <Button asChild size="lg" className="text-base">
-                  <Link to="/growthfunnelx">Get Started</Link>
+                  <Link to="/lead-generation">Get Started</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-base">
                   <Link to="/case-studies">View Our Work</Link>
